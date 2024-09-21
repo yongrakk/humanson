@@ -14,15 +14,13 @@
 ![다이어그램](https://github.com/user-attachments/assets/3649248a-3c44-4fdd-b964-f6f4575c24df)
 
 
-* 상품 리스트 ("/main")
+* DTO
+  Order : 주문ID, 고객명, 주문 날짜, 주문 상태 등 속성 데이터
 
-  - DB에 등록된 상품리스트를 노출 : 대표이미지, 원가(할인 전 가격), 할인가, 할인율(%)
-  - 찜 기능
-
-    **로그인 유저** : UI 클릭으로 상품별 찜 등록/취소
-
-    **비로그인** : UI 클릭 로그인 페이지 이동
-    
-  - 상품 10개씩 페이지네이션
-
-* 상품 상세 ("/productView")
+* Controller
+  OrderController : 외부 시스템에서 주문 수집, 주문 조회, 주문 리스트 조회 를 호출하여 사용
+* Service
+  OrderRepository : 주문 데이터 CRUD 구현을 위한 클래스
+  OrderService : 외부 시스템 데이터 연동 담당 인터페이스
+* Config
+  RestTemplateConfig : RestTemplate를 사용한 Http 통신을 위한 설정 
